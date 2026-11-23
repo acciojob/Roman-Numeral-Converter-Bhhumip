@@ -1,7 +1,7 @@
 function convertToRoman(num) {
   	const obj = {
       0:['M',1000],
-	  1:['CM'900],
+	  1:['CM',900],
       2:['D', 500],
       3:['CD',400],
       4:['C', 100], 
@@ -15,9 +15,9 @@ function convertToRoman(num) {
 
 
 	let res = '';
-	for(let i = 0;i<=obj.length();i++){
+	for(let i = 0;i<=obj.length;i++){
 		let times =  Math.floor(num / obj[i][1]);
-		res = res + obj.[i][0].repeat(times);
+		res = res + obj[i][0].repeat(times);
 		num  = num % obj[i][1];
 	}
 	return res;
