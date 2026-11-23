@@ -18,10 +18,15 @@ function convertToRoman(num) {
    
   let symbol = Object.entries(obj);
 	let res = '';
-	for(let i = 0;i<symbol.length;i++){
-		let times =  Math.floor(num / symbol[i][1]);
-		res = res + symbol[i][0].repeat(times);
-		num  = num % symbol[i][1];
+	// for(let i = 0;i<symbol.length;i++){
+	// 	let times =  Math.floor(num / symbol[i][1]);
+	// 	res = res + symbol[i][0].repeat(times);
+	// 	num  = num % symbol[i][1];
+	// }
+	for(let [key,value] of symbol){
+		let times = Math.floor(num/value);
+		res = res + key.repeat(times);
+		num = num % values;
 	}
 	return res;
 	
